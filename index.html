@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crud with Firestore</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h3>List member</h3>
+      </header>
+      <div class="table-wrapper">
+        <table class="table-users">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </table>
+        <button class="btn btn-add">Add user</button>
+      </div>
+      <!-- Add modal -->
+      <div class="add-modal modal-wrapper">
+        <div class="modal">
+          <div class="modal-header"><h3>Add new user</h3></div>
+          <div class="modal-body">
+            <form class="form" autocomplete="off">
+              <input type="text" name="firstName" placeholder="First Name">
+              <input type="text" name="lastName" placeholder="Last Name">
+              <input type="text" name="email" placeholder="Email">
+              <input type="text" name="phone" placeholder="Phone">
+              <button class="btn btn-modal" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Edit Modal -->
+      <div class="edit-modal modal-wrapper">
+        <div class="modal">
+          <div class="modal-header"><h3>Edit User</h3></div>
+          <div class="modal-body">
+            <form class="form" autocomplete="off">
+              <input type="text" name="firstName" placeholder="First Name">
+              <input type="text" name="lastName" placeholder="Last Name">
+              <input type="text" name="email" placeholder="Email">
+              <input type="text" name="phone" placeholder="Phone">
+              <button class="btn btn-modal" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDMYqdFGsoox2tO7IpWfIUOOe5LEww_GDc",
+    authDomain: "my-project-filmoteka.firebaseapp.com",
+    projectId: "my-project-filmoteka",
+    storageBucket: "my-project-filmoteka.appspot.com",
+    messagingSenderId: "1066803099123",
+    appId: "1:1066803099123:web:37bc2d2af8e6ca363e4e86",
+    measurementId: "G-WG5F727R6Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore()
+  const auth = firebase.auth()
+  db.settings({timestamptsInSnapshots:true})
+</script>
+  <script src="./script.js"></script>
+</body>
+</html>
